@@ -101,6 +101,7 @@ class InlineToolbarComponent extends PureComponent {
               name="sup"
               onClick={this.toggleSupMark}
               selected={this.isSubsupMarkActive(activeMarks, "sup")}
+              title="Superscript"
             >
               <Icons.Sup />
             </ToolbarButton>
@@ -109,6 +110,7 @@ class InlineToolbarComponent extends PureComponent {
               name="sub"
               onClick={this.toggleSubMark}
               selected={this.isSubsupMarkActive(activeMarks, "sub")}
+              title="Subscript"
             >
               <Icons.Sub />
             </ToolbarButton>

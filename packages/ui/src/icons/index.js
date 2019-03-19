@@ -12,6 +12,7 @@ import Italic from "./Italic";
 import Link from "./Link";
 import ListBulleted from "./ListBulleted";
 import ListNumbered from "./ListNumbered";
+import Question from "./Question";
 import Redo from "./Redo";
 import Strike from "./Strike";
 import Sub from "./Sub";
@@ -35,6 +36,7 @@ export default {
   ListBulleted,
   ListNumbered,
   P,
+  Question,
   Redo,
   Strike,
   Sub,

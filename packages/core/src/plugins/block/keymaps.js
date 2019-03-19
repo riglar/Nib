@@ -22,7 +22,7 @@ export default {
     changeBlockType("heading", { level: 6 })(state, dispatch)
 };
 
-export const keyMaps = {
+export const KeymapInfo = {
   p: "mod-alt-0",
   h1: "mod-alt-1",
   h2: "mod-alt-2",
