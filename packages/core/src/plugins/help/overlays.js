@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { PureComponent, Fragment } from "react";
 import styled from "@emotion/styled";
 import { Overlay } from "nib-ui";
 
@@ -16,14 +16,22 @@ class HelpOverlay extends PureComponent {
 
   render() {
     const { plugins } = this.context.config;
-    console.log(this.context.config);
-    const keyMaps = getKeymapInfo(plugins.options);
+    const pluginKeymaps = getKeymapInfo(plugins.options);
     return (
       <Overlay
         hideOverlay={this.hideHelpOverlay}
         render={() => (
           <Wrapper onClick={this.stopPropagation}>
-            Keyboard Shortcuts {JSON.stringify(keyMaps)}
+            {pluginKeymaps.map(({ name, keymaps }) => (
+              <Fragment key={`plugin-keymap-${name}`}>
+                {keymaps.map(({ key, label }) => (
+                  <div key={`option-key-${key}`}>
+                    <span>{label}</span>
+                    <span>{key}</span>
+                  </div>
+                ))}
+              </Fragment>
+            ))}
           </Wrapper>
         )}
       />
